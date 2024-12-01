@@ -1,3 +1,4 @@
 *.bak
 venv/
-*/input
+**/input
+**/compiled
