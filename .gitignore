@@ -1,4 +1,5 @@
 *.bak
 venv/
+__pycache__
 **/input
 **/compiled

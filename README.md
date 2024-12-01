@@ -15,4 +15,4 @@ I usually quit after a certain point due to general year-end business.
 |----------	|--------------	|-----------------	|
 | 2022     	| 9/31         	| Racket          	|
 | 2023     	| 5/31         	| Racket, Haskell 	|
-| 2024     	| In progress  	| Racket, ...     	|
+| 2024     	| In progress  	| Racket, Python, ...     	|
