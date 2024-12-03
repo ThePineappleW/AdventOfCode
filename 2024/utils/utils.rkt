@@ -15,5 +15,16 @@
                      acc))
               (build-list n-cols (λ(_) '()))))
 
+
+;; Port (String -> X) String -> [List [List X]]
+(define (read-rows port itemwise-op sep)
+  (read-lines port
+              (λ(line acc)
+                (cons (map itemwise-op
+                           (string-split line sep))
+                      acc))
+              '()))
+
 (provide read-columns
+         read-rows
          read-lines)
