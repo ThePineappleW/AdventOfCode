@@ -1,5 +1,13 @@
-*.bak
-venv/
-__pycache__
+# AoC
 **/input
+
+# Racket
+*.bak
 **/compiled
+
+# Python
+**/venv/
+**/__pycache__
+**/.ipynb_checkpoints
+**/.pytest_cache
+
