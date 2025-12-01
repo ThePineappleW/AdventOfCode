@@ -20,15 +20,15 @@ class Dial:
     self.zeros = 0
     self.all_zeros = 0
   
-  def left(self):
+  def left(self) -> None:
     self.val = self.val - 1 if self.val else 99
   
-  def right(self):
+  def right(self) -> None:
     self.val = self.val + 1 if self.val < 99 else 0
     
-  def turn(self, instr: str):
+  def turn(self, instr: str) -> None:
     direction = instr[0]
-    amount = int(instr.strip()[1:])
+    amount = int(instr[1:])
     
     for _ in range(amount):
       if direction == 'L':
@@ -41,7 +41,7 @@ class Dial:
       self.zeros += 1
 
 
-def count_zeros(instrs):
+def count_zeros(instrs) -> tuple[int, int]:
   d = Dial()
   for instr in instrs:
     d.turn(instr)
