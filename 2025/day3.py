@@ -19,7 +19,7 @@ def max_two_digits(lst: list[int]) -> int:
   print(result)
   return result
 
-def max_n_digits(digit: list[int], n: int, verbose=False) -> int:
+def max_n_digits_iterative(digits: list[int], n: int, verbose=False) -> int:
   """
   Returns the greatest n-digit number  that can be constructed
   from the provided list of digits, left-to-right.
@@ -37,6 +37,21 @@ def max_n_digits(digit: list[int], n: int, verbose=False) -> int:
   if verbose:
     print(total)
   return total
+
+def max_n_digits(digits, n, verbose=False):
+  """
+  Returns the greatest n-digit number  that can be constructed
+  from the provided list of digits, left-to-right.
+  """
+  n_1 = n - 1
+  right_bound = -n_1 or None
+  idx, digit = argmax(digits[:right_bound])
+  if verbose:
+    print(digit, right_bound)
+  if n == 1:
+    return digit
+  else:
+    return (digit * 10 ** n_1) + max_n_digits(digits[idx + 1:], n_1)
     
 
 def parse_file(f):
