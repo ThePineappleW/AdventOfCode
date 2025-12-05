@@ -18,12 +18,8 @@ class Window:
       upper_row = max(0, i - row_offset)
       lower_row = min(n, i + row_offset)
       rows = arr[upper_row : lower_row + 1]
-      center_row = i - upper_row
       for j in range(m):
         left_col = max(0, j - col_offset)
         right_col = min(m, j + col_offset)
-        center_col = j - left_col
         
-        # print(upper_row, lower_row, left_col, right_col)
-        
-        yield [row[left_col : right_col + 1] for row in rows], center_row, center_col
+        yield [row[left_col : right_col + 1] for row in rows]

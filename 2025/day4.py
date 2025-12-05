@@ -32,14 +32,13 @@ def parse(f):
 def count_accessible(arr: list[list[str]]) -> int:
   rolls = []
   count = 0
-  for i, (window, center_row, center_col) in enumerate(Window.slide_centered(arr, (3, 3))):
-    if window[center_row][center_col] == '@':
-      
+  for i, window in enumerate(Window.slide_centered(arr, (3, 3))):
+    row, col = divmod(i, len(arr[0]))
+    if arr[row][col] == '@':
       if sum(row.count("@") for row in window) < 5:
         count += 1
+        rolls.append((row, col))
         
-        coords = divmod(i, len(arr[0]))
-        rolls.append(coords)
   return count, rolls
 
 def remove_rolls(arr: list[list[str]]) -> int:
