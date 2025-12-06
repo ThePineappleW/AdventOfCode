@@ -7,8 +7,8 @@ class Window:
     The window will have maximum size equal to self.shape,
     but the size will be smaller around the edges. 
     """
-    assert shape[0] % 2 != 0
-    assert shape[1] % 2 != 0
+    assert shape[0] % 2 != 0, "Window dimensions must be odd!"
+    assert shape[1] % 2 != 0, "Window dimensions must be odd!"
     
     row_offset = shape[0] // 2
     col_offset = shape[1] // 2
