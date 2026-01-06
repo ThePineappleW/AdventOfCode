@@ -64,7 +64,10 @@ class Posn(ABC):
 class Posn2D(Posn):
     x: int
     y: int
-
+        
+    def __repr__(self):
+        return f"({self.x}, {self.y})"
+        
     def distance(self, other: Posn) -> float:
         return sqrt((other.x - self.x) ** 2 + (other.y - self.y) ** 2)
 
